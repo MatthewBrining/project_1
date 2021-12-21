@@ -77,6 +77,7 @@ var save = function () {
   var saveBtn = document.querySelector('.btn');
   if (saveBtn) {
     movies.push(qurybox.value);
+    qurybox.value = '';
     localStorage.setItem('movie-title', JSON.stringify(movies));
     addToList();
   } else if (getMovieInfo(data) > 0) {
@@ -90,6 +91,7 @@ $('.btn').on('click', save);
 
 function addToList() {
   var ulEl = document.querySelector('.save-list');
+  ulEl.innerHTML = '';
   for (var i = 0; i < movies.length; i++) {
     var liEl = document.createElement('li');
     liEl.className = 'save-list-group';
