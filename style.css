@@ -30,11 +30,11 @@ p {
 }
 /* Serch-bar Ends*/
 
-.btn {
+.btn, .clearBtn {
     background-color: orange;
     font-size: 1.3rem;
     padding: 6px 5px;
-    width: 50%;
+    width: 40%;
     display: block;
     margin: 7px 0;
     color: #6f308f;
