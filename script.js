@@ -87,8 +87,10 @@ var save = function () {
   }
 };
 
-$('.btn').on('click', save);
+// click Handlers
+document.querySelector('.btn').addEventListener('click', save);
 
+// dynamically add the movies name on the search history
 function addToList() {
   var ulEl = document.querySelector('.save-list');
   ulEl.innerHTML = '';
@@ -100,4 +102,16 @@ function addToList() {
   }
 }
 
+// function call
 addToList();
+
+// clear search history
+function clearSearch(event) {
+  event.preventDefault();
+  movies = [];
+  localStorage.removeItem('movie-title');
+  document.location.reload();
+}
+
+// click Handlers
+document.querySelector('.clearBtn').addEventListener('click', clearSearch);
